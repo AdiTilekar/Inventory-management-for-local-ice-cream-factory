@@ -1,7 +1,7 @@
 import json
 import time
-# Inputs for factory inventory 
 
+print('You have to update the inventory first')
 # Input for Mava kulfi
 n=int(input('Mava Kulfi:'))
 
@@ -25,7 +25,7 @@ rec = {
     104: {'Name': 'Gulkand Kulfi', 'Price': 25, 'qt': r},
     105: {'Name': 'Dryfruit Kulfi', 'Price': 25, 'qt': s}
 }
-print('--------------------Shree Ganesh kulfi ----------------')
+print('--------------------Shri ganesh kulfi ----------------')
 a=time.ctime()
 print('               ',a,'                         ')
 # Prints the total products with their keys
@@ -58,9 +58,9 @@ if ui_pr in rec and rec[ui_pr]['qt'] >= ui_qn:
     js = json.dumps(rec, indent=4)
     with open('rec.json', 'w') as fd:
         fd.write(js)
-    sale= 'Name: '+ ui_Name+' , '+'Email Id: '+ui_Mail+' , '+'Phone Number: '+ui_Number+' , '+'Product Name: '+str(rec[ui_pr]['Name'])+' , \n'+'Product Quantity: '+str(ui_qn)+' , '+'Product Price: '+str(rec[ui_pr]['Price'])+' , '+'Total Price: '+str(ui_qn*rec[ui_pr]['Price'])+' , '+time.ctime()+ '\n'
+    sale= ui_Name+' , '+ui_Mail+' , '+ui_Number+' , '+str(rec[ui_pr]['Name'])+' , '+str(ui_qn)+' , '+str(rec[ui_pr]['Price'])+' , '+str(ui_qn*rec[ui_pr]['Price'])+' , '+time.ctime()+ '\n'
 else:
     print("Invalid product ID or insufficient stock!")
-fd=open('sales.txt','a')
+fd=open('sales.csv','a')
 fd.write(sale)
 fd.close()
